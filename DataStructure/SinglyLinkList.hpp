@@ -47,6 +47,8 @@ public:
 
 	void PrintNodesRecursively(SinglyLinkListNode *node);
 
+	void PrintReverseLinkListRecursion(SinglyLinkListNode *node);
+
 	void ReverseLinkListRecursion(SinglyLinkListNode *node);
 };
 

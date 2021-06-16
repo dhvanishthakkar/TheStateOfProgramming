@@ -177,13 +177,26 @@ void SinglyLinkList::PrintNodesRecursively(SinglyLinkListNode *node)
 	cout << node->data << ",";
 	PrintNodesRecursively(node->next);
 }
-void SinglyLinkList::ReverseLinkListRecursion(SinglyLinkListNode *node)
+void SinglyLinkList::PrintReverseLinkListRecursion(SinglyLinkListNode *node)
 {
 	if (node == NULL)
 	{
 		return;
 	}
-	ReverseLinkListRecursion(node->next);
+	PrintReverseLinkListRecursion(node->next);
 	cout << node->data << ",";
+}
+
+void SinglyLinkList::ReverseLinkListRecursion(SinglyLinkListNode *node)
+{
+	if (node->next == NULL)
+	{
+		headPtr = node;
+		return;
+	}
+	ReverseLinkListRecursion(node->next);
+	SinglyLinkListNode *temp = node->next;
+	temp->next = node;
+	node->next = NULL;
 }
 /* End of the class */

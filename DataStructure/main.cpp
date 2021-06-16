@@ -87,8 +87,10 @@ int main()
 	list.PrintNodesRecursively(node);
 	cout << endl;
 
-	cout << "Lets reverse the node recursive way :) " << endl;
+	cout << "Lets reverse the node recursive way and print as same :) " << endl;
 	list.ReverseLinkListRecursion(node);
+	SinglyLinkListNode *node1 = list.headPtr;
+	list.PrintNodesRecursively(node1);
 	cout << endl;
 	cout << "Thanks for using this application, Have a great day !!" << endl;
 	return 0;
