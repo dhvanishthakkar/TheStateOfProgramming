@@ -33,11 +33,21 @@ public:
 	/* Print the all Nodes */
 	void PrintAllNodes();
 
+	/* Reverse all linked list */
+	void ReverseLinkList();
+
 	/* Create New Node */
 	SinglyLinkListNode* CreateNewNode();
 
 	/* Delete All the Nodes  */
-	SinglyLinkList* DeleteNode(int pos);
+	void DeleteNthNode(int pos);
+
+	/* Insert a Node at given position */
+	void InsertNodeAtPosition(int pos, int data);
+
+	void PrintNodesRecursively(SinglyLinkListNode *node);
+
+	void ReverseLinkListRecursion(SinglyLinkListNode *node);
 };
 
 #endif /* INCLUDE_SINGLYLINKLIST_HPP_ */

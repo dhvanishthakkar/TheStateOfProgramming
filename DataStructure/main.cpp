@@ -13,7 +13,11 @@ using namespace std;
 
 int main()
 {
-	int num = 0, data = 0, choice = 0;
+	cout << "Welcome to TheStateOfProgramming. . .!! " << endl;
+	cout << endl;
+
+	int num = 0, data = 0, choice = 0, pos = 0;
+	char in = '\0';
 
 	SinglyLinkList list;
 
@@ -23,12 +27,11 @@ int main()
 
 	for (int i = 0; i < num; i++)
 	{
-		cout << "Enter the Node [" << i << "] data = ";
+		cout << "Enter the data = ";
 		cin >> data;
-		cout << endl;
 
 		cout
-				<< "1) Enter the Node At End\n2) Enter the Node At Begin\n3) Delete All Nodes\n"
+				<< "1) Insert a node at begin\n2) Insert a node at end\n3) Insert a node at position\n4) Delete All Nodes\n"
 				<< endl;
 		cout << "Enter the choice from Above = ";
 		cin >> choice;
@@ -36,11 +39,17 @@ int main()
 
 		if (choice == 1)
 		{
-			list.InsetAtEnd(data);
+			list.InsertAtBegin(data);
 		}
 		else if (choice == 2)
 		{
-			list.InsertAtBegin(data);
+			list.InsetAtEnd(data);
+		}
+		else if (choice == 3)
+		{
+			cout << "Enter the position you want to enter " << endl;
+			cin >> pos;
+			list.InsertNodeAtPosition(pos, data);
 		}
 		else
 		{
@@ -52,6 +61,35 @@ int main()
 
 	list.PrintAllNodes();
 
+	cout << "Reverse the Linklist.." << endl;
+
+	list.ReverseLinkList();
+	list.PrintAllNodes();
+
+	cout << "Do you want to delete any Node - y/n?" << endl;
+	cin >> in;
+
+	if (in == 'y')
+	{
+		while (in == 'y')
+		{
+			cout << "Enter the position you want to delete " << endl;
+			cin >> pos;
+			list.DeleteNthNode(pos);
+			list.PrintAllNodes();
+			cout << "Do you want to delete more - y/n  ?" << endl;
+			cin >> in;
+		}
+	}
+
+	cout << "Printing all the nodes using recursive mode : " << endl;
+	SinglyLinkListNode *node = list.headPtr;
+	list.PrintNodesRecursively(node);
+	cout << endl;
+
+	cout << "Lets reverse the node recursive way :) " << endl;
+	list.ReverseLinkListRecursion(node);
+	cout << endl;
 	cout << "Thanks for using this application, Have a great day !!" << endl;
 	return 0;
 }
