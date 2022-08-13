@@ -1,5 +1,8 @@
+#ignore without extension file except makefile
 *
+!*/
 !*.*
+!Makefile
 
 # Prerequisites
 *.d
