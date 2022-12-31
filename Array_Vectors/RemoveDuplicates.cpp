@@ -1,8 +1,8 @@
 /*
  * RemoveDuplicates.cpp
  *
- *  Created on: 29-May-2022
- *      Author: dhvanish
+ *  Created on: 30-Dec-2022
+ *      Author: Dhvanish
  */
 
 #include<iostream>
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-// Brut force Approch
+// Brute force Approach
 int RemoveDuplicates (int arr[], int size)
 {
 	int curr = 1, i = 1;
@@ -41,7 +41,7 @@ int RemoveDuplicatesFromVector(vector<int> vctr)
 {
 	int curr = 1;
 	
-	while(curr < vctr.size())
+	while(curr < (int)vctr.size())
 	{
 		if ( vctr.at(curr - 1) == vctr.at(curr) )
 			vctr.erase(vctr.begin()+curr);
@@ -72,10 +72,12 @@ int RemoveDuplicatesAlgo(vector<int> vctr)
 
 int main()
 {
+  cout << "This is RemoveDuplicates Programs..." << endl;
+
 	int arr[] = {0,0,1,1,1,2,2,3,3,4};
 	int size = sizeof(arr) / sizeof(int);
 	
-	cout << "After Removing Duplicates from Array" << endl;
+	cout << "INFO : After Removing Duplicates from Array" << endl;
 	
 	// remove duplicates using Array
 	int result = RemoveDuplicates(arr, size);
@@ -83,14 +85,14 @@ int main()
 	cout << endl;
 	
 	vector<int> vctr = {0,0,0,0,1,1,1,2,2,3,3,4};
-	cout << "After Removing Duplicates from Vector " << endl;
+	cout << "INFO : After Removing Duplicates from Vector " << endl;
 
 	// remove duplicates using vector
 	result = RemoveDuplicatesFromVector(vctr);
-	cout << "Size of New Array/Vecotr = " << result << endl;
+	cout << "INFO : Size of New Array/Vecotr = " << result << endl;
 	
 	result = RemoveDuplicatesAlgo(vctr);
-	cout << "Size of New Array/Vecotr = " << result << endl;
+	cout << "INFO : Size of New Array/Vecotr = " << result << endl;
 	
 	return 0;
 }
