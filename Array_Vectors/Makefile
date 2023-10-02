@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: ArrayReverse BinarySearch PrefixSum KadanesAlgorithm RemoveDuplicates BubbleSort InsertionSort SelectionSort FindLowerBound ClosestSum
+all: ArrayReverse BinarySearch PrefixSum KadanesAlgorithm RemoveDuplicates BubbleSort InsertionSort SelectionSort CountSort FindLowerBound ClosestSum
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -37,6 +37,9 @@ InsertionSort: InsertionSort.o
 SelectionSort: SelectionSort.o
 	$(CC) -o SelectionSort SelectionSort.o
 
+CountSort: CountSort.o
+	$(CC) -o CountSort CountSort.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -50,3 +53,4 @@ clean:
 	rm -rf BubbleSort
 	rm -rf InsertionSort
 	rm -rf SelectionSort
+	rm -rf CountSort
