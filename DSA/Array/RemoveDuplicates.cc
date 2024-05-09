@@ -45,11 +45,12 @@ int main()
 	cout << "Before removing duplicates : " << endl;
 	for (auto num:nums)
 			cout << num << ",";
-		cout << endl;
+	cout << endl;
 	
+	// Function call
 	RemoveDuplicate(nums);	
-	cout << "After removing duplicates : " << endl;
 
+	cout << "After removing duplicates : " << endl;
 	for (auto num:nums)
 		cout << num << ",";
 	cout << endl;

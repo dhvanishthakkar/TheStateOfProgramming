@@ -78,13 +78,15 @@ void MoveZeroAtEnd_2(vector<int> &nums)
 int main()
 {
 	vector<int> nums1 = {0,1,0,3,12,0};
-	vector<int> nums2 = {0,1,0,3,12,0};
 	
 	cout << "Before moving zero's in nums1 array : " << endl;
 	for (auto num:nums1)
 		cout << num << ",";
 	cout << endl;
+
+	// Function call
 	MoveZeroAtEnd_1(nums1);
+
 	cout << "After moving zero's nums1 array : " << endl;
 	for (auto num:nums1)
 	    cout << num << ",";
@@ -92,15 +94,21 @@ int main()
 	
 	cout << "==========================================" << endl;
 	
+	vector<int> nums2 = {0,1,0,3,12,0};
 	cout << "Before moving zero's in nums2 array : " << endl;
+
 	for (auto num:nums2)
 		cout << num << ",";
 	cout << endl;
+
+	// Function call
 	MoveZeroAtEnd_1(nums2);	
+
 	cout << "After moving zero's nums2 array : " << endl;
 	for (auto num:nums2)
 		cout << num << ",";
 	cout << endl;
+
 	return 0;
 }
 

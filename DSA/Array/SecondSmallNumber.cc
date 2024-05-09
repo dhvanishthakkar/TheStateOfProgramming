@@ -36,9 +36,7 @@ int SecondSmallNumber(vector<int> &nums)
     }
     
     return secSmallest;
-	
 }
-
 
 int main()
 {
@@ -65,6 +63,7 @@ int main()
 	    }
 	    cout << endl;
 
+	    // Function call
 	    int result =  SecondSmallNumber(nums);
 
 	    cout << "Second Smallest Number in the Array is " << result << endl;
