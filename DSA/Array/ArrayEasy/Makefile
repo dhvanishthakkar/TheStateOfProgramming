@@ -2,7 +2,8 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: SecondLargeNumber SecondSmallNumber ReverseArray RemoveDuplicates MoveZeroAtEnd MissingNum MaxSubArray FindSingleNumber
+all: SecondLargeNumber SecondSmallNumber ReverseArray RemoveDuplicates MoveZeroAtEnd MissingNum MaxSubArray FindSingleNumber \
+TwoSumTarget
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -31,6 +32,9 @@ MaxSubArray: MaxSubArray.o
 FindSingleNumber: FindSingleNumber.o
 	$(CC) -o FindSingleNumber FindSingleNumber.o
 
+TwoSumTarget: TwoSumTarget.o
+	$(CC) -o TwoSumTarget TwoSumTarget.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -42,3 +46,4 @@ clean:
 	rm -rf MissingNum
 	rm -rf MaxSubArray
 	rm -rf FindSingleNumber
+	rm -rf TwoSumTarget
