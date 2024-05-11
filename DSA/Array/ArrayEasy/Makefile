@@ -3,7 +3,7 @@ CC=g++
 CCFLAGS= -Wall -g
 
 all: SecondLargeNumber SecondSmallNumber ReverseArray RemoveDuplicates MoveZeroAtEnd MissingNum MaxSubArray FindSingleNumber \
-TwoSumTarget
+TwoSumTarget SortColors BestTimeToBuySellStock
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -35,6 +35,12 @@ FindSingleNumber: FindSingleNumber.o
 TwoSumTarget: TwoSumTarget.o
 	$(CC) -o TwoSumTarget TwoSumTarget.o
 
+SortColors: SortColors.o
+	$(CC) -o SortColors SortColors.o
+	
+BestTimeToBuySellStock: BestTimeToBuySellStock.o
+	$(CC) -o BestTimeToBuySellStock BestTimeToBuySellStock.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -47,3 +53,5 @@ clean:
 	rm -rf MaxSubArray
 	rm -rf FindSingleNumber
 	rm -rf TwoSumTarget
+	rm -rf SortColors
+	rm -rf BestTimeToBuySellStock
