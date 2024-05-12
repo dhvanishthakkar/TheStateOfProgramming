@@ -3,7 +3,7 @@ CC=g++
 CCFLAGS= -Wall -g
 
 all: SecondLargeNumber SecondSmallNumber ReverseArray RemoveDuplicates MoveZeroAtEnd MissingNum MaxSubArray FindSingleNumber \
-TwoSumTarget SortColors BestTimeToBuySellStock MajorityElement
+TwoSumTarget SortColors BestTimeToBuySellStock MajorityElement FindMaxSubArray FindPivotIndex
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -44,6 +44,12 @@ BestTimeToBuySellStock: BestTimeToBuySellStock.o
 MajorityElement: MajorityElement.o
 	$(CC) -o MajorityElement MajorityElement.o
 
+FindMaxSubArray: FindMaxSubArray.o
+	$(CC) -o FindMaxSubArray FindMaxSubArray.o
+
+FindPivotIndex: FindPivotIndex.o
+	$(CC) -o FindPivotIndex FindPivotIndex.o
+	
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -59,3 +65,6 @@ clean:
 	rm -rf SortColors
 	rm -rf BestTimeToBuySellStock
 	rm -rf MajorityElement
+	rm -rf FindMaxSubArray
+	rm -rf FindPivotIndex
+	
