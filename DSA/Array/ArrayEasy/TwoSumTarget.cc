@@ -168,8 +168,8 @@ int main()
 
 	// validations and display result
 	if (result1.size() == 2)
-		cout << "MAP         : Index1: " << result1[0] << ", Index2: " << result1[1]
-				<< endl;
+		cout << "MAP         : Index1: " << result1[0] << ", Index2: "
+				<< result1[1] << endl;
 	else
 		cout << "There is no match found for target value " << target << endl;
 

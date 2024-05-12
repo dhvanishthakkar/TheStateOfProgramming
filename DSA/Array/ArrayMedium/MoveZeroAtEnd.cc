@@ -5,12 +5,9 @@
  *      Author: Dhvanish Thakkar
  */
 
-/**************************************************************
- *
+/****************************************************************
  * WAP to remove duplicates from sorted array
- *
- **************************************************************
- */
+ ****************************************************************/
 
 #include <iostream>
 #include <vector>
@@ -18,25 +15,29 @@
 
 using namespace std;
 
-/*
+/************************************************************************************************
+ *
  * There are few ways to approach this problem
- * 1) Two pointer method
- * 2) Search for non-zero element and take it forward and remaining place put default zeros
- */
-
-/*
+ *     1) Two pointer method
+ *     2) Search for non-zero element and take it forward and remaining place put default zeros
+ *
  * Time Complexity = O(N)
  * space Complexity = O(1)
- */
-void MoveZeroAtEnd_1(vector<int> &nums) {
+ *
+ ************************************************************************************************/
+void MoveZeroAtEnd_1(vector<int> &nums)
+{
 	int start = 0;
 	int end = nums.size() - 1;
 
-	while (start <= end) {
-		if (nums[start] == 0) {
+	while (start <= end)
+	{
+		if (nums[start] == 0)
+		{
 			swap(nums[start], nums[end]);
 			end--;
-		} else {
+		} else
+		{
 			start++;
 		}
 	}
@@ -44,16 +45,21 @@ void MoveZeroAtEnd_1(vector<int> &nums) {
 	return;
 }
 
-/*
+/***********************************************************************
+ *
  * Time Complexity = O(N)
  * space Complexity = O(1)
- */
-void MoveZeroAtEnd_2(vector<int> &nums) {
+ *
+ ***********************************************************************/
+void MoveZeroAtEnd_2(vector<int> &nums)
+{
 	int curr = 0;
 	int run = 0;
 
-	while (run < nums.size()) {
-		if (nums[run] != 0) {
+	while (run < nums.size())
+	{
+		if (nums[run] != 0)
+		{
 			nums[curr++] = nums[run];
 		} else
 			run++;
@@ -65,7 +71,8 @@ void MoveZeroAtEnd_2(vector<int> &nums) {
 	return;
 }
 
-int main() {
+int main()
+{
 	vector<int> nums1 = { 0, 1, 0, 3, 12, 0 };
 
 	cout << "Before moving zero's in nums1 array : " << endl;

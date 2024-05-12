@@ -5,30 +5,32 @@
  *      Author: Dhvanish Thakkar
  */
 
-/*************************************************************************************************
- *    Description :
- *        WAP to find Max Sub Array
- *
- *    Solution:
- *        Here we can use Kadane's algorithm.
- *        Expected Answer should be 6, From index 3 to 6 => (4-1+2+1=6)
- *
- *    Time Complexity  = O(N)
- *    Space Complexity = O(1)
- *
- **************************************************************************************************/
-
 #include <iostream>
 #include <vector>
 #include <climits>
 
 using namespace std;
 
-int MaxSubArray(vector<int> nums) {
+/*************************************************************************************************
+ *  Description :
+ *      WAP to find Max Sub Array
+ *
+ *  Solution:
+ *      - Here we can use Kadane's algorithm.
+ *      - Expected Answer should be 6, From index 3 to 6 => (4-1+2+1=6)
+ *
+ *  Time Complexity  = O(N)
+ *  Space Complexity = O(1)
+ *
+ **************************************************************************************************/
+
+int MaxSubArray(vector<int> nums)
+{
 	int currSum = 0;
 	int maxSum = 0;
 
-	for (int i = 0; i < nums.size(); i++) {
+	for (int i = 0; i < nums.size(); i++)
+	{
 		currSum += nums[i];
 		maxSum = max(maxSum, currSum);
 
@@ -39,7 +41,8 @@ int MaxSubArray(vector<int> nums) {
 	return maxSum;
 }
 
-int main() {
+int main()
+{
 	vector<int> nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
 
 	// display input

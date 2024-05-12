@@ -2,8 +2,8 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: SecondLargeNumber SecondSmallNumber ReverseArray RemoveDuplicates MoveZeroAtEnd MissingNum MaxSubArray FindSingleNumber \
-TwoSumTarget SortColors BestTimeToBuySellStock MajorityElement FindMaxSubArray FindPivotIndex
+all: SecondLargeNumber SecondSmallNumber ReverseArray RemoveDuplicates MissingNum FindSingleNumber \
+TwoSumTarget BestTimeToBuySellStock MajorityElement FindMaxSubArray FindPivotIndex
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -20,14 +20,8 @@ ReverseArray: ReverseArray.o
 RemoveDuplicate: RemoveDuplicate.o
 	$(CC) -o RemoveDuplicates RemoveDuplicates.o
 
-MoveZeroAtEnd: MoveZeroAtEnd.o
-	$(CC) -o MoveZeroAtEnd MoveZeroAtEnd.o
-
 MissingNum: MissingNum.o
 	$(CC) -o MissingNum MissingNum.o
-
-MaxSubArray: MaxSubArray.o
-	$(CC) -o MaxSubArray MaxSubArray.o
 
 FindSingleNumber: FindSingleNumber.o
 	$(CC) -o FindSingleNumber FindSingleNumber.o
@@ -35,9 +29,6 @@ FindSingleNumber: FindSingleNumber.o
 TwoSumTarget: TwoSumTarget.o
 	$(CC) -o TwoSumTarget TwoSumTarget.o
 
-SortColors: SortColors.o
-	$(CC) -o SortColors SortColors.o
-	
 BestTimeToBuySellStock: BestTimeToBuySellStock.o
 	$(CC) -o BestTimeToBuySellStock BestTimeToBuySellStock.o
 
@@ -57,12 +48,9 @@ clean:
 	rm -rf SecondSmallNumber
 	rm -rf ReverseArray
 	rm -rf RemoveDuplicates
-	rm -rf MoveZeroAtEnd
 	rm -rf MissingNum
-	rm -rf MaxSubArray
 	rm -rf FindSingleNumber
 	rm -rf TwoSumTarget
-	rm -rf SortColors
 	rm -rf BestTimeToBuySellStock
 	rm -rf MajorityElement
 	rm -rf FindMaxSubArray

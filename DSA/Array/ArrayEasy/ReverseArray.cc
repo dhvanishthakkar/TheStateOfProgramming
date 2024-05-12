@@ -11,16 +11,20 @@
 
 using namespace std;
 
-/*
+/*******************************************************************************
+ *
  * Time Complexity = O(N/2)
  * Space Complexity = O(1);
- */
+ *
+ *******************************************************************************/
 
-void ReverseArray(vector<int> &nums) {
+void ReverseArray(vector<int> &nums)
+{
 	int start = 0;
 	int end = nums.size() - 1;
 
-	while (start <= end) {
+	while (start <= end)
+	{
 		swap(nums[start], nums[end]);
 		start++;
 		end--;
@@ -29,7 +33,8 @@ void ReverseArray(vector<int> &nums) {
 	return;
 }
 
-int main() {
+int main()
+{
 	vector<int> nums;
 	int numElement = 0;
 	int data = 0;
@@ -38,7 +43,8 @@ int main() {
 	cout << endl;
 
 	cout << "Enter the numbers : ";
-	for (int i = 0; i < numElement; i++) {
+	for (int i = 0; i < numElement; i++)
+	{
 		cin >> data;
 		nums.push_back(data);
 	}
@@ -46,7 +52,8 @@ int main() {
 
 	// Display input
 	cout << "Before Reversing an Array : ";
-	for (int i = 0; i < nums.size(); i++) {
+	for (int i = 0; i < nums.size(); i++)
+	{
 		cout << nums[i] << ",";
 	}
 	cout << endl;
@@ -56,7 +63,8 @@ int main() {
 
 	// Display output
 	cout << "After Reversing Array : ";
-	for (auto num : nums) {
+	for (auto num : nums)
+	{
 		cout << num << ",";
 	}
 	cout << endl;

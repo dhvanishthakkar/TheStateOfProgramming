@@ -14,7 +14,6 @@ using namespace std;
 /**********************************************************************************************
  *  Description : 
  *      WAP to find the pivot index from the array
- *      
  *
  *  Solution :
  *      - Use prefix sum technique
@@ -63,7 +62,7 @@ int main()
 	if (pivotIndex != -1)
 	    cout << "Found Pivot index : " << pivotIndex << endl;
 	else
-		cout << "No found any Pivot index in the array " << endl;
+		cout << "Not found any Pivot index in the array " << endl;
 	
 	return 0;
 }

@@ -37,7 +37,7 @@ using namespace std;
 int MajorityElement(vector<int> &nums)
 {
 	int winningTeam = 0;
-    int count = 1;
+	int count = 1;
 	winningTeam = nums[0];
 
 	for (int i = 1; i < nums.size(); i++)
@@ -50,7 +50,7 @@ int MajorityElement(vector<int> &nums)
 		if (count == 0)
 		{
 			winningTeam = nums[i];
-		    count = 1;
+			count = 1;
 		}
 	}
 
@@ -63,27 +63,27 @@ int MajorityElement(vector<int> &nums)
 int MajorityElement_Sort(vector<int> &nums)
 {
 	sort(nums.begin(), nums.end());
-	return nums[nums.size()/2];
+	return nums[nums.size() / 2];
 }
 
 // Main function starts
 int main()
 {
-    vector<int> inputs = {2, 3, 2, 2, 1, 2, 1, 2, 3, 1, 2, 2, 1};
+	vector<int> inputs = { 2, 3, 2, 2, 1, 2, 1, 2, 3, 1, 2, 2, 1 };
 
-    // Display input array
-    cout << "Display Input Price Array : " << endl;
-    for (auto num : inputs)
-        cout << num << ",";
-    cout << endl;
+	// Display input array
+	cout << "Display Input Price Array : " << endl;
+	for (auto num : inputs)
+		cout << num << ",";
+	cout << endl;
 
-    // Function calls
-    int majorElement = MajorityElement(inputs);
+	// Function calls
+	int majorElement = MajorityElement(inputs);
 
-    cout << "Normal : Majority Element is " << majorElement << endl;
+	cout << "Normal : Majority Element is " << majorElement << endl;
 
-    // Function call
-    majorElement = MajorityElement_Sort(inputs);
-    cout << "Sorting : Majority Element is " << majorElement << endl;
+	// Function call
+	majorElement = MajorityElement_Sort(inputs);
+	cout << "Sorting : Majority Element is " << majorElement << endl;
 }
 
