@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: MoveZeroAtEnd MaxSubArray SortColors ThreeSum
+all: MoveZeroAtEnd MaxSubArray SortColors ThreeSum FindAvgSubArrThreshold
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -19,6 +19,9 @@ SortColors: SortColors.o
 ThreeSum: ThreeSum.o
 	$(CC) -o ThreeSum ThreeSum.o
 
+FindAvgSubArrThreshold: FindAvgSubArrThreshold.o
+	$(CC) -o FindAvgSubArrThreshold FindAvgSubArrThreshold.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -26,3 +29,4 @@ clean:
 	rm -rf MaxSubArray
 	rm -rf SortColors	
 	rm -rf ThreeSum
+	rm -rf FindAvgSubArrThreshold
