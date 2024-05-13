@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: MoveZeroAtEnd MaxSubArray SortColors ThreeSum FindAvgSubArrThreshold
+all: MoveZeroAtEnd MaxSubArray SortColors ThreeSum FindAvgSubArrThreshold FindAnagramStr
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -22,6 +22,9 @@ ThreeSum: ThreeSum.o
 FindAvgSubArrThreshold: FindAvgSubArrThreshold.o
 	$(CC) -o FindAvgSubArrThreshold FindAvgSubArrThreshold.o
 
+FindAnagramStr: FindAnagramStr.o
+	$(CC) -o FindAnagramStr FindAnagramStr.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -30,3 +33,4 @@ clean:
 	rm -rf SortColors	
 	rm -rf ThreeSum
 	rm -rf FindAvgSubArrThreshold
+	rm -rf FindAnagramStr
