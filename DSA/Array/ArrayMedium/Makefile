@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: MoveZeroAtEnd MaxSubArray SortColors
+all: MoveZeroAtEnd MaxSubArray SortColors ThreeSum
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -15,10 +15,14 @@ MaxSubArray: MaxSubArray.o
 
 SortColors: SortColors.o
 	$(CC) -o SortColors SortColors.o
-	
+
+ThreeSum: ThreeSum.o
+	$(CC) -o ThreeSum ThreeSum.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
 	rm -rf MoveZeroAtEnd
 	rm -rf MaxSubArray
 	rm -rf SortColors	
+	rm -rf ThreeSum
