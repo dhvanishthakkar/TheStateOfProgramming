@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: MoveZeroAtEnd MaxSubArray SortColors ThreeSum FindAvgSubArrThreshold FindAnagramStr
+all: MoveZeroAtEnd MaxSubArray SortColors ThreeSum FindAvgSubArrThreshold FindAnagramStr LongestRepeatingChar
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -24,6 +24,10 @@ FindAvgSubArrThreshold: FindAvgSubArrThreshold.o
 
 FindAnagramStr: FindAnagramStr.o
 	$(CC) -o FindAnagramStr FindAnagramStr.o
+	
+LongestRepeatingChar: LongestRepeatingChar.o
+	$(CC) -o LongestRepeatingChar LongestRepeatingChar.o
+	
 
 clean:
 	rm -rf $(OBJS)
@@ -34,3 +38,4 @@ clean:
 	rm -rf ThreeSum
 	rm -rf FindAvgSubArrThreshold
 	rm -rf FindAnagramStr
+	rm -rf LongestRepeatingChar
