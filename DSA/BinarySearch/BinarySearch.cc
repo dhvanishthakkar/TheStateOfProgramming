@@ -32,7 +32,7 @@ using namespace std;
 *       
 *       Step 5 : Repeat this process untill start <= end.
 *
-*  Time  Complexity :  O(N/2) ==> 0(log2N)
+*  Time  Complexity :  0(log2N)
 *
 *  Space Complexity :  O(1)
 *
@@ -47,9 +47,9 @@ int BinarySearch (vector<int> &inputs, int target)
 		if (inputs[mid] == target)
 			return mid;
 		else if (inputs[mid] > target)
-			end --;
+			end = mid - 1;
 		else
-			start++;
+			start = mid + 1;
 	}
 	return -1;
 }

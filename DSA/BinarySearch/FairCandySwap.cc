@@ -28,18 +28,68 @@ using namespace std;
  *
  *****************************************************************************************************************/
 
+/*****************************************************************************************************************
+ *  Solution using binary search :
+ *  
+ *  Here you need to use the formula as below explained
+ *       aliceSum -x(removing from alince) + y(adding from nik) = nikSum -y(removing from nik) + x(adding from alice)
+ *       By solving above equation : Y = ((sum1 - sum2 + (2 * x)) / 2)
+ *       Search above Y in nik's array and if you found then return the answer.
+ *  
+ *  Time Complexity : 0(N) + Log2^N = 0(N)
+ *
+ * Space complexity :
+ *      Used map to store the element 0(1);
+ ******************************************************************************************************************/
+vector<int> FairCandySwapBinSearch(vector<int> &alice, vector<int> &nik)
+{
+	vector<int> result;
+	int aliceSum = 0, nikSum = 0, start = 0, end = 0, mid = 0;
+	
+	// taking sum of alice's candy
+	for (auto num:alice)
+		aliceSum += num;
+	
+	// taking sum of nik's candy
+	for (auto num:nik)
+		nikSum += num;
+	
+	for (int i = 0; i < alice.size(); i++)
+	{
+		// use here formula to search target candy in nik's array		
+		int target = ( (nikSum - aliceSum + (2 * alice[i]) ) / 2);
+		start = 0;
+		end = nik.size()-1;	
+		while (start <= end)
+		{
+			mid = (start+end)/2;
+			if (nik[mid] == target) 
+			{
+				result.push_back(alice[i]);
+			    result.push_back(target);   
+				return result;
+			}
+			else if (nik[mid] > target)
+				end = mid-1;
+			else
+				start = mid+1;
+		}
+	}
+		
+	return result;
+}
 
-/*
+/*****************************************************************************************************************
+ *  Solution using MAP : 
+ *
  * Time Complexity : 
  *      aliceSum = O(N) +  NikSum = O(N) + Processing O(N)  = O(3N) 
  *      After removing constant O(N)
  *
  * Space complexity :
  *      Used map to store the element 0(N);
- */
-
-
-vector<int> FairCandySwap(vector<int> &alice, vector<int> &nik)
+ ******************************************************************************************************************/
+vector<int> FairCandySwapMap(vector<int> &alice, vector<int> &nik)
 {
 	vector<int> result;
 	map<int, int> nikMap;
@@ -76,12 +126,13 @@ int main()
 	vector<int>	 nik1   = {2,2};
 	
 	// Function call
-	vector<int> result = FairCandySwap(alice1, nik1);
+	vector<int> result = FairCandySwapMap(alice1, nik1);
 	
-	// Display Input
+	// Display output
+	cout << "Using MAP : " << endl;
 	if (result.size())
 	{
-	    cout << "Input is : ";
+	    cout << "Output is : ";
 	    for (auto candy : result)
 		    cout << candy << ",";
 	    cout << endl;
@@ -91,7 +142,27 @@ int main()
 	   cout << "Did not found any pair which can make both side balanced " << endl;
 	}
 	
-	cout << "===================================" << endl;
+	cout << "==================================================================" << endl;
+	result.clear();
+	cout << "Using Binary Search : " << endl;
+
+	// Function call
+	result = FairCandySwapBinSearch(alice1, nik1);
+		
+	// Display output
+	if (result.size())
+	{
+	    cout << "Output is : ";
+	    for (auto candy : result)
+		    cout << candy << ",";
+	    cout << endl;
+	}
+	else
+	{
+	   cout << "Did not found any pair which can make both side balanced " << endl;
+	}
+
+	cout << "==================================================================" << endl;
 	
 	// TestCase 2
 	vector<int>	alice2 = {1,2};
@@ -99,9 +170,30 @@ int main()
 	result.clear();
 
 	// Function call
-	result = FairCandySwap(alice2, nik2);
+	result = FairCandySwapMap(alice2, nik2);
 
 	// Display Output
+	cout << "Using MAP : " << endl;
+	if (result.size())
+	{
+	    cout << "Output is : ";
+	    for (auto candy : result)
+		    cout << candy << ",";
+	    cout << endl;
+	}
+	else
+	{
+	   cout << "Did not found any pair which can make both side balanced " << endl;
+	}
+	
+	cout << "==================================================================" << endl;
+	result.clear();
+	cout << "Using Binary Search : " << endl;
+
+	// Function call
+	result = FairCandySwapBinSearch(alice2, nik2);
+			
+	// Display Input
 	if (result.size())
 	{
 	    cout << "Output is : ";
