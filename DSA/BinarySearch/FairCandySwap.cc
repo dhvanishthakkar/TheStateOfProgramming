@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include<map>
+#include <map>
 #include <algorithm>
 
 using namespace std;
@@ -78,17 +78,17 @@ int main()
 	// Function call
 	vector<int> result = FairCandySwap(alice1, nik1);
 	
-	// Display Output
+	// Display Input
 	if (result.size())
 	{
-	    cout << "Output is : ";
+	    cout << "Input is : ";
 	    for (auto candy : result)
 		    cout << candy << ",";
 	    cout << endl;
 	}
 	else
 	{
-	   cout << "Did not found any pair make both side balanced " << endl;
+	   cout << "Did not found any pair which can make both side balanced " << endl;
 	}
 	
 	cout << "===================================" << endl;
@@ -111,7 +111,7 @@ int main()
 	}
 	else
 	{
-	   cout << "Did not found any pair make both side balanced " << endl;
+	   cout << "Did not found any pair which can make both side balanced " << endl;
 	}
 
 	return 0;
