@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: FairCandySwap BinarySearch RotatedSortArray FindCapacityToShip
+all: FairCandySwap BinarySearch RotatedSortArray FindCapacityToShip MinDayMakeBouquets
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -19,6 +19,9 @@ RotatedSortArray: RotatedSortArray.o
 FindCapacityToShip: FindCapacityToShip.o
 	$(CC) -o FindCapacityToShip FindCapacityToShip.o
 
+MinDayMakeBouquets: MinDayMakeBouquets.o
+	$(CC) -o MinDayMakeBouquets MinDayMakeBouquets.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -26,3 +29,4 @@ clean:
 	rm -rf BinarySearch
 	rm -rf RotatedSortArray
 	rm -rf FindCapacityToShip
+	rm -rf MinDayMakeBouquets
