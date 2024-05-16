@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: FairCandySwap BinarySearch RotatedSortArray
+all: FairCandySwap BinarySearch RotatedSortArray FindCapacityToShip
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -16,9 +16,13 @@ BinarySearch: BinarySearch.o
 RotatedSortArray: RotatedSortArray.o
 	$(CC) -o RotatedSortArray RotatedSortArray.o
 
+FindCapacityToShip: FindCapacityToShip.o
+	$(CC) -o FindCapacityToShip FindCapacityToShip.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
 	rm -rf FairCandySwap
 	rm -rf BinarySearch
 	rm -rf RotatedSortArray
+	rm -rf FindCapacityToShip
