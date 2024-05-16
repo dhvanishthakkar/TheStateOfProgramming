@@ -46,33 +46,33 @@ int FindBouquets(vector<int>& bloomDay, int numFlowers, int minDays)
 	    if (boomedFlowers[i] == 1)
 	        flowers++;
 		else
-	       flowers = 0; 
-				
-		if (flowers == numFlowers)
+			flowers = 0; 
+		
+        if (flowers == numFlowers)
 		{
-		   bouquets++;
+           bouquets++;
            flowers = 0;
-		}
-	}
-	return bouquets;
+        }
+    }
+    return bouquets;
 }
 
 int MinDayMakeBouquets(vector<int> &bloomDays, int flower, int bouquet)
 {
-	int start = 0, end = 0, mid = 0;
-	int minDays = 0, maxDays = 0, result = -1;
-	
-	for (auto day : bloomDays)
-	{
-		minDays = min(day, minDays);
-		maxDays = max(day, maxDays);
-	}
-	
-	// Binary Search
-	start = minDays;
-	end = maxDays;
-	while(start <= end)
- 	{
+    int start = 0, end = 0, mid = 0;
+    int minDays = 0, maxDays = 0, result = -1;
+
+    for (auto day : bloomDays)
+    {
+        minDays = min(day, minDays);
+        maxDays = max(day, maxDays);
+    }
+
+    // Binary Search
+    start = minDays;
+    end = maxDays;
+    while(start <= end)
+    {
         mid = (start+end)/2;
         int ans = FindBouquets(bloomDays, flower, mid);
         if (ans >= bouquet)		
@@ -91,19 +91,39 @@ int MinDayMakeBouquets(vector<int> &bloomDays, int flower, int bouquet)
 // Main Function call
 int main()
 {
-	vector<int> bloomDays = {1,10,3,10,2};
-	int flower = 1;
-	int bouquet = 3;
+    vector<int> bloomDays1 = {1,10,3,10,2};
+    int flower = 1;
+    int bouquet = 3;
 
 	// Function call
-	int result = MinDayMakeBouquets(bloomDays, flower, bouquet);
+	int result = MinDayMakeBouquets(bloomDays1, flower, bouquet);
 
-	// Display output
-	if (result != -1)
+    // Display output
+    if (result != -1)
 	{
         cout << result << " Minimum days required to make given bouquet " << endl;
-	}
-	else
+    }
+    else
+    {
+        cout << "There is no bouquet possible with given days " << endl;
+    }
+
+    cout << "==========================================================" << endl;
+
+    // Testcase 2
+    vector<int> bloomDay2 = {7,7,7,7,12,7,7};
+    bouquet = 2;
+    flower = 3;
+	
+    // Function call
+	result = MinDayMakeBouquets(bloomDay2, flower, bouquet);
+
+    // Display output
+    if (result != -1)
+    {
+        cout << result << " Minimum days required to make given bouquet " << endl;
+    }
+    else
 	{
 	    cout << "There is no bouquet possible with given days " << endl;
 	}
