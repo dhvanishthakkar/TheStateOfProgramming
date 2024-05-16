@@ -2,13 +2,11 @@
  * MinDayMakeBouquets.cc
  *
  *  Created on: 16-May-2024
- *      Author: dhvanish
+ *      Author: Dhvanish Thakkar
  */
 
 #include <iostream>
 #include <vector>
-#include <climits>
-#include <algorithm>
 
 using namespace std;
 
@@ -24,9 +22,9 @@ using namespace std;
  *       Output : 3
  *
  *  Solution :
- *      - This binary search problem
+ *      - This binary search problem where we need to find the min days which depends on bouquets
  *
- *  Time Complexity  : NLogN
+ *  Time Complexity  : O(NLogN)
  *
  *  Space Complexity : 0(1)
  *
@@ -53,7 +51,7 @@ int FindBouquets(vector<int>& bloomDay, int numFlowers, int minDays)
 		if (flowers == numFlowers)
 		{
 		   bouquets++;
-	       flowers = 0;
+           flowers = 0;
 		}
 	}
 	return bouquets;
@@ -70,27 +68,27 @@ int MinDayMakeBouquets(vector<int> &bloomDays, int flower, int bouquet)
 		maxDays = max(day, maxDays);
 	}
 	
+	// Binary Search
 	start = minDays;
 	end = maxDays;
-	
 	while(start <= end)
  	{
         mid = (start+end)/2;
         int ans = FindBouquets(bloomDays, flower, mid);
         if (ans >= bouquet)		
         {
-        	result = mid;
-        	end = mid - 1;
+            result = mid;
+            end = mid - 1;
         }
         else
         {
             start = mid+1;	
         }
-	}
-
+    }
 	return result;
 }
 
+// Main Function call
 int main()
 {
 	vector<int> bloomDays = {1,10,3,10,2};
@@ -100,6 +98,7 @@ int main()
 	// Function call
 	int result = MinDayMakeBouquets(bloomDays, flower, bouquet);
 
+	// Display output
 	if (result != -1)
 	{
         cout << result << " Minimum days required to make given bouquet " << endl;
