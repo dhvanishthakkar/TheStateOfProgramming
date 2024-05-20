@@ -10,4 +10,3 @@ all:
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
-
