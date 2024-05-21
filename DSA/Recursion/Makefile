@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: FibonacciNumber FactorialNumber ValidPalindrome ClimbStair MinCostToClimbStair
+all: FibonacciNumber FactorialNumber ValidPalindrome ClimbStair MinCostToClimbStair FindPowers
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -22,6 +22,10 @@ ClimbStair: ClimbStair.o
 MinCostToClimbStair: MinCostToClimbStair.o
 	$(CC) -o MinCostToClimbStair MinCostToClimbStair.o
 
+FindPowers: FindPowers.o
+	$(CC) -o FindPowers FindPowers.o
+
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -30,4 +34,5 @@ clean:
 	rm -rf ValidPalindrome
 	rm -rf ClimbStair
 	rm -rf MinCostToClimbStair
+	rm -rf FindPowers
 	
