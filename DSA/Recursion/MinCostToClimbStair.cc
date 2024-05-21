@@ -47,13 +47,27 @@ int FindMinCostToClimbStair(vector<int>&cost, int start, int end, vector<int> &d
 // Main Function
 int main()
 {
-	vector<int> cost = {1,100,1,1,1,100,1,1,100,1};
-	int start = 0, end = cost.size()-1, result = 0;
-	vector<int> dp = {100, -1};
+	// Testcase 1
+	vector<int> cost1 = {1,100,1,1,1,100,1,1,100,1};
+	int end = cost1.size(), result = 0;
+	vector<int> dp1 (end+1, -1);
 	
 	// Function call
-	result = FindMinCostToClimbStair(cost, start, end, dp);
+	result = min(FindMinCostToClimbStair(cost1, 0, end, dp1), FindMinCostToClimbStair(cost1, 1, end, dp1));
 
-	cout << "Min Cost to reach to top is : " << result << endl;
+	cout << "Testcase 1 : Min Cost to reach to top is : " << result << endl;
+	
+	cout << "=================================================" << endl;
+
+	// Tescase 2
+	vector<int> cost2 = {10,15,20};
+	end = cost2.size();
+	vector<int> dp2 (end+1, -1);
+
+	// Function call
+	result = min(FindMinCostToClimbStair(cost2, 0, end, dp2), FindMinCostToClimbStair(cost2, 1, end, dp2));
+
+	cout << "Testcase 2 : Min Cost to reach to top is : " << result << endl;
+	
 	return 0;
 }
