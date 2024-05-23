@@ -14,7 +14,7 @@ using namespace std;
 /**********************************************************************************************
  *  Description : 
  *   - WAP to place N-Queen in N*N chess board such a way that it should not attack each other
- *   - The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that
+ *   - The n-queens puzzle is the problem of placing n queens on an n x n chess board such that
  *     no two queens attack each other. Given an integer n, return all distinct solutions to the
  *     n-queens puzzle. You may return the answer in any order.
  *   - Each solution contains a distinct board configuration of the n-queens' placement,
@@ -34,10 +34,12 @@ using namespace std;
  *
  *******************************************************************************/
 
-bool isSafe(int i, int j, vector<string> &board) {
+bool isSafe(int i, int j, vector<string> &board)
+{
 	int x = i, y = j;
 	// top left diagonal
-	while (x >= 0 && y >= 0) {
+	while (x >= 0 && y >= 0)
+	{
 		if (board[x][y] == 'Q')
 			return false;
 		x--;
@@ -47,7 +49,8 @@ bool isSafe(int i, int j, vector<string> &board) {
 	// Upwards
 	x = i;
 	y = j;
-	while (x >= 0) {
+	while (x >= 0)
+	{
 		if (board[x][y] == 'Q')
 			return false;
 		x--;
@@ -56,7 +59,8 @@ bool isSafe(int i, int j, vector<string> &board) {
 	// top right
 	x = i;
 	y = j;
-	while (x >= 0 && y < board.size()) {
+	while (x >= 0 && y < board.size())
+	{
 		if (board[x][y] == 'Q')
 			return false;
 		y++;
@@ -66,14 +70,18 @@ bool isSafe(int i, int j, vector<string> &board) {
 }
 
 void N_Queens(int row, int n, vector<string> &board,
-		vector<vector<string>> &ans) {
-	if (row == n) {
+		vector<vector<string>> &ans)
+{
+	if (row == n)
+	{
 		ans.push_back(board);
 		return;
 	}
 
-	for (int j = 0; j < n; j++) {
-		if (isSafe(row, j, board)) {
+	for (int j = 0; j < n; j++)
+	{
+		if (isSafe(row, j, board))
+		{
 			//place the queen
 			board[row][j] = 'Q';
 			N_Queens(row + 1, n, board, ans);
@@ -85,7 +93,8 @@ void N_Queens(int row, int n, vector<string> &board,
 }
 
 // Main Function
-int main() {
+int main()
+{
 	// Testcase 1
 	vector<vector<string>> ans1;
 	int row = 0, n = 4;
@@ -99,7 +108,8 @@ int main() {
 	// Function call
 	N_Queens(row, n, board1, ans1);
 
-	for (auto output : ans1) {
+	for (auto output : ans1)
+	{
 		for (auto data : output)
 			cout << data << endl;
 		cout << endl;
@@ -119,7 +129,8 @@ int main() {
 	// Function call
 	N_Queens(0, n, board2, ans2);
 
-	for (auto output : ans2) {
+	for (auto output : ans2)
+	{
 		for (auto data : output)
 			cout << data << endl;
 		cout << endl;

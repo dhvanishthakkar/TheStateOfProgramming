@@ -16,7 +16,7 @@ using namespace std;
 *  Description : 
 *    -  WAP to find capacity to ship packages within D days.
 *    -  Return the least weight capacity of the ship that will result in all the packages on the
-*       conveyor belt being shipped within days days.
+*       conveyer belt being shipped within days days.
 *
 *    - Leet Code Problem num : 1011
 *
@@ -82,6 +82,7 @@ int FindCapacityToShip(vector<int> &weights, int days)
 	return result;
 }
 
+// Main Function
 int main()
 {
 	vector<int> shipWeight = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

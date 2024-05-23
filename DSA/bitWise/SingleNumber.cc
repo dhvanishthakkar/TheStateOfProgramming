@@ -10,7 +10,6 @@
 
 using namespace std;
 
-
 /****************************************************************************************
  *  Description :
  *    WAP to find the single num present in the array.
@@ -40,6 +39,7 @@ int main()
 		cout << num << ",";
 	cout << endl;
 
+    // Function call
 	int result = SingleNumber(inputs);
 
 	cout << "Single number in the array is : " << result << endl;

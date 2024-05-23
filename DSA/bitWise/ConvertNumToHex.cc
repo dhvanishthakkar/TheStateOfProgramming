@@ -20,9 +20,9 @@ using namespace std;
  *  Example : Input: num = -1 ==> Output: "ffffffff"
  *
  *  Solution :
- *    - Here, You need to take modulo of 16 and indetify the remender into hex array
- *      After that you need to divide the num untill it becomes zero.
- *    - For nagative num, assign input to unsign variable and do same process.
+ *    - Here, You need to take modulo of 16 and identify the remainder into hex array
+ *      After that you need to divide the num until it becomes zero.
+ *    - For negative num, assign input to unsign variable and do same process.
  *
  **********************************************************************************/
 
@@ -58,7 +58,10 @@ int main()
 	int input1 = 26;
 
 	cout << "Input1 number is : " << input1 << endl;
+
+	// Function call
 	string result = ConvertNumToHex(input1);
+
 	cout << "Output1 is : " << result << endl;
 
 	cout << "=================================" << endl;
@@ -66,7 +69,11 @@ int main()
 	int input2 = -1;
 	result = "";
 	cout << "Input2 number is : " << input2 << endl;
+
+	// Function call
 	result = ConvertNumToHex(input2);
 
 	cout << "Output2 is : " << result << endl;
+
+	return 0;
 }

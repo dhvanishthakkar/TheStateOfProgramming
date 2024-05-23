@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 /*********************************************************************
  *  Description :
  *    - WAP to find factorial output of given number using recursion
@@ -22,11 +21,12 @@ int FindFactorial(int num)
 {
 	if (num == 0 || num ==1)
 		return 1;
-	// Reursive function call
+	// Recursive function call
 	int result = FindFactorial(num-1);
 	return result * num;
 }
 
+// Main Function
 int main()
 {
 	int input = 0;
@@ -38,4 +38,6 @@ int main()
 	int result = FindFactorial(input);
 	
 	cout << "Factorial output of given nuber is : " << result << endl;
+
+	return 0;
 }

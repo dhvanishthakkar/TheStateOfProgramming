@@ -30,26 +30,28 @@ int FibonacciNumber(int num, vector<int> &dp)
 	int a = 0, b = 0;
 	if (num == 0 || num == 1)
 		return num;
-	if(dp[num] != -1)
+	if (dp[num] != -1)
 		return dp[num];
+
+	// Recursive call
 	a = FibonacciNumber(num - 1, dp);
 	b = FibonacciNumber(num - 2, dp);
-	dp[num] = a+b;
-	return a+b;
+	dp[num] = a + b;
+	return a + b;
 }
 
+// Main Function
 int main()
 {
-	
 	int input = 0;
-	cout << "Enter the number : " ;
+	cout << "Enter the number : ";
 	cin >> input;
-	
-	vector<int> dp(100, -1);
+	cout << endl;
+	vector<int> dp(input, -1);
+
+	// Function call
 	int result = FibonacciNumber(input, dp);
-	
-	cout << "Fibonacci output of given nuber is : " << result << endl;
+
+	cout << "Fibonacci output of given number is : " << result << endl;
 }
-
-
 
