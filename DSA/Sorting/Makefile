@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: BubbleSort SelectionSort InsertionSort QuickSort
+all: BubbleSort SelectionSort InsertionSort QuickSort MergeSort
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -19,6 +19,9 @@ InsertionSort: InsertionSort.o
 QuickSort: QuickSort.o
 	$(CC) -o QuickSort QuickSort.o
 
+MergeSort: MergeSort.o
+	$(CC) -o MergeSort MergeSort.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -26,3 +29,4 @@ clean:
 	rm -rf SelectionSort
 	rm -rf InsertionSort
 	rm -rf QuickSort
+	rm -rf MergeSort
