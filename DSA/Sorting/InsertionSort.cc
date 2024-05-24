@@ -25,7 +25,7 @@ using namespace std;
 void InsertionSort(vector<int>&nums)
 {
 	int i = 0;
-	while (i < nums.size())
+	while (i < nums.size()-1)
 	{
 		int j = i;
 		if (nums[j] > nums[j+1])
@@ -48,16 +48,16 @@ void InsertionSort(vector<int>&nums)
 // Main Function
 int main()
 {
-	vector<int> nums = {2,4,1,0,10,6,5,7,8,3};
-	
+	vector<int> nums = {2,4,1,0,10,6,5,9,8,3};
+
 	cout << "Display Input Array : " << endl;
 	for (auto ele : nums)
 		cout << ele << ",";
 	cout << endl;
-	
+
 	// Insertion sort
 	InsertionSort(nums);
-	
+
 	cout << "Display Output Array : " << endl;
 	for (auto ele : nums)
 		cout << ele << ",";
