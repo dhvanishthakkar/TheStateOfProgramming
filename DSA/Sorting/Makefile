@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: BubbleSort SelectionSort InsertionSort QuickSort MergeSort SavePatients
+all: BubbleSort SelectionSort InsertionSort QuickSort MergeSort SavePatients MaxBuildSpeed
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -25,6 +25,9 @@ MergeSort: MergeSort.o
 SavePatients: SavePatients.o
 	$(CC) -o SavePatients SavePatients.o
  
+MaxBuildSpeed: MaxBuildSpeed.o
+	$(CC) -o MaxBuildSpeed MaxBuildSpeed.o
+
 clean:
 	rm -rf $(OBJS)
 	rm -rf *.o
@@ -34,3 +37,4 @@ clean:
 	rm -rf QuickSort
 	rm -rf MergeSort
 	rm -rf SavePatients
+	rm -rf MaxBuildSpeed
