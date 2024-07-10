@@ -2,7 +2,7 @@
 CC=g++
 CCFLAGS= -Wall -g
 
-all: BubbleSort SelectionSort InsertionSort QuickSort MergeSort SavePatients MaxBuildSpeed CountInversion
+all: BubbleSort SelectionSort InsertionSort QuickSort MergeSort SavePatients MaxBuildSpeed CountInversion MergeMultipleSortedArray
 
 %.o: %.cpp
 	$(CC) -c $(CCFLAGS) $<
@@ -42,3 +42,4 @@ clean:
 	rm -rf SavePatients
 	rm -rf MaxBuildSpeed
 	rm -rf CountInversion
+	rm -rf MergeMultipleSortedArray
